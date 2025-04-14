@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// // src/App.js
+// import React from 'react';
+// import { Routes, Route } from 'react-router-dom';
+// import Navbar from './components/navbar/Navbar';
+// import Home from './pages/home/Home';
+// import ProductList from './pages/product_list/ProductList';
+// import ProductDetail from './pages/product_details/ProductDetail';
+// import Checkout from './pages/checkout/Checkout';
+// import AdminDashboard from './pages/admin_dashboard/AdminDashboard';
+// import AuthPage from './pages/auth/AuthOptions';
+
+// const App = () => {
+//   return (
+//     <>
+//       <Navbar />
+//       <Routes>
+//       <Route path="/" element={<AuthPage />} />
+//         <Route path="/" element={<Home />} />
+//         <Route path="/products" element={<ProductList />} />
+//         <Route path="/products/:id" element={<ProductDetail />} />
+//         <Route path="/checkout" element={<Checkout />} />
+//         <Route path="/admin" element={<AdminDashboard />} />
+//       </Routes>
+//     </>
+//   );
+// };
+
+// export default App;
+
+
+
+
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AuthOptions from './pages/auth/AuthOptions';
+import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   
+      <Routes>
+        <Route path="/" element={<AuthOptions />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+
+  );
 }
 
-export default App
+export default App;

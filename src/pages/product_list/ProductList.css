@@ -1,0 +1,10 @@
+/* src/pages/ProductList.css */
+.product-list {
+    padding: 2rem;
+  }
+  .product-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
