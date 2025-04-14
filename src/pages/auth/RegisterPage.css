@@ -1,5 +1,5 @@
 .register-page {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,6 +7,8 @@
     height: 100vh;
     background-color: #f9c7d1;
     animation: fadeIn 1s ease-out;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   @keyframes fadeIn {
@@ -40,14 +42,18 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    max-width: 400px;
   }
   
-  input {
-    padding: 10px;
-    font-size: 1.2rem;
+  input,
+  select {
+    padding: 12px;
+    font-size: 1.1rem;
     border-radius: 8px;
     border: 1px solid #f07c9d;
     background-color: #fff;
+    font-family: 'Poppins', sans-serif;
   }
   
   button {
@@ -59,6 +65,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
   }
   
   button:hover {
@@ -71,7 +78,7 @@
   
   .loading-text {
     color: #f27b91;
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    text-align: center;
   }
   
