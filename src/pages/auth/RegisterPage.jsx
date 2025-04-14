@@ -24,9 +24,7 @@ const RegisterPage = () => {
     try {
       const res = await fetch('http://localhost:5000/api/auth/register', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
@@ -47,51 +45,28 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="register-page">
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-
-        <select
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Role</option>
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Registering...' : 'Register'}
-        </button>
-      </form>
+    <div className="register-container">
+      <div className="welcome-section">
+        <h2>Welcome Back!</h2>
+        <p>Provide your personal details to use all features</p>
+        <button className="sign-in-button">SIGN IN</button>
+      </div>
+      <div className="form-section">
+       
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
+          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+          <select name="role" value={formData.role} onChange={handleChange} required>
+            <option value="">Select Role</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button type="submit" disabled={isSubmitting} className="signup-button">
+            {isSubmitting ? 'Registering...' : 'SIGN UP'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
