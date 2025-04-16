@@ -1,11 +1,17 @@
+body {
+    background: linear-gradient(to right, #9cc327, #5b934d);
+  }
+
 .login-page {
     font-family: 'Arial', sans-serif;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f9c7d1; /* Soft pink background */
-    animation: fadeIn 1s ease-in-out;
+    height: 100vh;
+    background-color: #f9c7d1;
+    animation: fadeIn 1s ease-out;
+    padding: 20px;
   }
   
   @keyframes fadeIn {
@@ -13,85 +19,74 @@
     100% { opacity: 1; }
   }
   
+  .login-page h2 {
+    font-size: 2.5rem;
+    color: #d16b8c;
+    margin-bottom: 20px;
+    animation: slideInFromTop 1s ease-out;
+  }
+  
+  @keyframes slideInFromTop {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
   form {
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    position: relative;
-  }
-  
-  .login-page h2 {
-    position: absolute;
-    top: -60px;
-    font-size: 2rem;
-    color: #d16b8c;
-    animation: slideIn 0.8s ease-out;
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateY(-40px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    width: 100%;
+    max-width: 400px;
   }
   
   input {
-    padding: 12px;
+    padding: 10px;
+    font-size: 1.2rem;
     border-radius: 8px;
     border: 1px solid #f07c9d;
-    font-size: 1rem;
     background-color: #fff;
   }
   
   button {
-    padding: 12px;
+    padding: 15px;
     background-color: #f07c9d;
     color: white;
     border: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   button:hover {
     background-color: #f27b91;
   }
   
-  .status-message {
+  button:active {
+    background-color: #e5697a;
+  }
+  
+  .loading-text {
+    color: #f27b91;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: #b30000;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    font-weight: bold;
-    margin-bottom: -10px;
   }
   
-  .status-message.success {
-    color: #4CAF50;
-  }
+  .login-container{
   
-  .status-message.error {
-    color: #f44336;
+    display: flex;
+    font-family: "Segoe UI", sans-serif;
+    background-color: white;
+    margin: 50px 200px;
   }
-  /* You can style the Toast container itself */
-.Toastify__toast-container {
-    top: 20px !important; /* Adjust the top positioning */
-    z-index: 9999;
-  }
-  
-  .Toastify__toast--success {
-    background-color: #4CAF50 !important; /* Green color for success */
-  }
-  
-  .Toastify__toast--error {
-    background-color: #f44336 !important; /* Red color for error */
-  }
-  

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './RegisterPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate(); // ✅ Hook must be here, not inside a function
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,8 +34,12 @@ const RegisterPage = () => {
       const data = await res.json();
 
       if (res.ok) {
-        alert('Registration Successful!');
+        // You can replace this with a toast later
+        // alert('Registration Successful!');
         setFormData({ name: '', email: '', password: '', role: '' });
+
+        // ✅ Redirect to login after successful registration
+        navigate('/login');
       } else {
         alert(data.message || 'Registration failed!');
       }
@@ -44,15 +51,20 @@ const RegisterPage = () => {
     setIsSubmitting(false);
   };
 
+  const handleSignInClick = () => {
+    navigate('/login'); // ✅ Navigates to LoginPage
+  };
+
   return (
     <div className="register-container">
       <div className="welcome-section">
         <h2>Welcome Back!</h2>
         <p>Provide your personal details to use all features</p>
-        <button className="sign-in-button">SIGN IN</button>
+        <button className="sign-in-button" onClick={handleSignInClick}>
+          SIGN IN
+        </button>
       </div>
       <div className="form-section">
-       
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
