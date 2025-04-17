@@ -1,54 +1,35 @@
-/* src/components/Navbar.css */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #43a047;
     padding: 1rem 2rem;
-    background: linear-gradient(to right, #e91e63, #ff6f61);
     color: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   
   .navbar-logo a {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.5rem;
     color: white;
     text-decoration: none;
+    font-weight: bold;
   }
   
   .navbar-logo span {
-    color: #ffe4ec;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 1.5rem;
+    color: #f8bbd0;
   }
   
   .navbar-links a {
-    color: white;
+    margin-left: 1.5rem;
     text-decoration: none;
+    color: white;
     font-weight: 500;
-    position: relative;
-  }
-  
-  .navbar-links a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
-  
-  .navbar-links a:hover::after {
-    width: 100%;
+    transition: color 0.3s ease;
   }
   
   .navbar-links a:hover {
-    color: #ffe4ec;
+    color: #c8e6c9;
   }
   

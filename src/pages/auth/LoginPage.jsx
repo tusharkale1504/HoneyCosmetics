@@ -43,7 +43,7 @@ const LoginPage = () => {
         setFormData({ email: '', password: '' });
         // Redirect based on role if needed
         if (data.role === 'admin') {
-            navigate('/product-list');
+            navigate('/admin-dashboard');
           } else if (data.role === 'user') {
             navigate('/home');
           } else {

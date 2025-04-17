@@ -1,63 +1,76 @@
 /* src/pages/AdminDashboard.css */
 .admin-dashboard {
-    padding: 2rem;
-    max-width: 1000px;
+    padding: 4rem 2rem;
+    max-width: 1200px;
     margin: auto;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
   }
   
   .admin-dashboard h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: #ff69b4;
   }
   
   .subtitle {
-    color: #777;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 3rem;
   }
   
   .admin-panels {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   
   .panel {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2.5rem;
+    border-radius: 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     text-align: center;
-    transition: transform 0.2s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
   
   .panel:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   }
   
   .panel h3 {
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #555;
   }
   
   .panel p {
     color: #666;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
   }
   
   .panel-btn {
-    padding: 0.6rem 1.5rem;
-    background-color: #3f51b5;
+    padding: 0.7rem 1.8rem;
+    background: linear-gradient(to right, #ff69b4, #ff85a2);
     color: white;
+    font-weight: bold;
     border: none;
-    border-radius: 20px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
   }
   
   .panel-btn:hover {
-    background-color: #303f9f;
+    background: linear-gradient(to right, #ff85a2, #ff69b4);
+    transform: scale(1.05);
   }
   
