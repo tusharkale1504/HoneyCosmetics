@@ -7,7 +7,7 @@ import Home from './pages/home/Home';
 import AdminDashboard from './pages/admin_dashboard/AdminDashboard';
 import AddProducts from './pages/add_products/AddProducts';
 import ProductsPage from './pages/products_page/ProductsPage';
-// import ProductDetail from './pages/product_details/ProductDetail';
+import ProductDetail from './pages/product_details/ProductDetail';
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/add-product" element={<AddProducts />} />
         <Route path="/home" element={<Home />} />
         <Route path="/product-list" element={<ProductList />} />
-        {/* <Route path="/products-list/:id" element={<ProductDetail />} /> */}
+        <Route path="/products-detail/2" element={<ProductDetail />} />
       </Routes>
  
   );
