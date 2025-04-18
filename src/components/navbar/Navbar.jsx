@@ -13,6 +13,10 @@ const Navbar = () => {
         <Link to="/home">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/checkout">Checkout</Link>
+        <div className="order-link">
+          <Link to="/orders">Orders</Link>
+          <span className="order-count">2</span> {/* Example count */}
+        </div>
       </nav>
     </header>
   );

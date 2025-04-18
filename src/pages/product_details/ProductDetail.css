@@ -1,65 +1,132 @@
-/* src/pages/product_details/ProductDetail.css */
+/* Main container full-screen and scroll-free */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 .product-detail {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  padding: 4rem;
-  background-color: #ffe6f0;
-  min-height: 100vh;
-  animation: fadeIn 0.6s ease-in;
+  background-color: #e8f5e9;
+  height: 100vh;
+
+  animation: fadeSlideIn 0.6s ease-in;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Image */
+.product-image-container {
+  animation: zoomIn 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
 }
 
 .product-image-container img {
-  width: 400px;
+  width: 250px;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
 }
 
+.product-image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Info section */
 .product-info {
-  max-width: 500px;
+  max-width: 400px;
+  animation: fadeInRight 0.8s ease-in-out;
+  margin-left: 2rem;
+  text-align: left;
 }
 
 .product-info h2 {
-  font-size: 2.5rem;
-  color: #d16b8c;
+  font-size: 1.8rem;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+  animation: bounceIn 0.6s ease;
 }
 
 .price {
-  font-size: 1.5rem;
-  color: #e91e63;
-  margin: 1rem 0;
+  font-size: 1.3rem;
+  color: #388e3c;
+  margin: 0.8rem 0;
+  font-weight: bold;
 }
 
 .description {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #4e4e4e;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
 }
 
 button {
-  padding: 12px 24px;
-  background-color: #e91e63;
+  padding: 10px 22px;
+  background-color: #43a047;
   color: white;
   border: none;
-  border-radius: 30px;
-  font-size: 1rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 10px rgba(67, 160, 71, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-  background-color: #d81b60;
+  background-color: #2e7d32;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(67, 160, 71, 0.4);
 }
 
-@keyframes fadeIn {
+/* Animations */
+@keyframes fadeSlideIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -4,7 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import './LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 
+
 const LoginPage = () => {
+  
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -36,6 +38,7 @@ const LoginPage = () => {
       console.log("Response data:", data.role);
 
       if (res.ok) {
+       
         // toast.success('Login Successful!', {
         //   position: toast.POSITION.TOP_CENTER,
         //   autoClose: 5000,
