@@ -3,11 +3,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductCard.css';
 
-const ProductCard = ({ title, image }) => {
+const ProductCard = ({ id, title, image }) => {
   const navigate = useNavigate();
 
   const handleViewDetails = () => {
-    navigate('/products-detail/2'); 
+       navigate(`/products-detail/${id}`);
   };
 
   return (

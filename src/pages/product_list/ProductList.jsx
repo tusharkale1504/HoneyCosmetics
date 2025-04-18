@@ -30,12 +30,13 @@ const ProductList = () => {
         ) : (
           <div className="product-grid">
             {products.map((product, index) => (
-              <ProductCard
-                key={index}
-                title={product.name}
-                price={`₹${product.price}`}
-                image={product.image_url}
-              />
+             <ProductCard
+             key={index}
+             id={product.id} // Pass ID here
+             title={product.name}
+             price={`₹${product.price}`}
+             image={product.image_url}
+           />
             ))}
           </div>
         )}
